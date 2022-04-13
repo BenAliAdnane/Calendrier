@@ -1,6 +1,7 @@
 #ifndef __CALENDRIER_H__
 #define __CALENDRIER_H__
 
+typedef struct s_edt* EDT;
 typedef struct s_jour* Jour;
 typedef struct s_semaine* Semaine;
 
@@ -18,11 +19,6 @@ void supprimerCours();
 void supprimerProf();
 void supprimerFormation();
 void supprimerUE();
-
-
-
-
-
 
 
 #endif

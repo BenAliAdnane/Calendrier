@@ -6,11 +6,6 @@ struct s_edt* Edt;
 struct s_jour* Jour;
 struct s_semaine* Semaine;
 
-struct s_cours* Cours;
-struct s_prof* Prof;
-struct s_Formation* Formation;
-struct s_UE* UE;
-
 void ajouteCours();
 void ajouteProf();
 void ajouteFormation();
