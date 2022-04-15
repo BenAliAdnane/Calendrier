@@ -5,31 +5,27 @@
 
 
 struct s_cours{
-    int horaire;    // 1-4, horaire de la journée : 1 = 8h-10h ; 2 = 10h-12h ; 3 = 14h-16h ; 4 = 16h-18h
+    int horaire;    // Entre 1 et 20  : 1-4 = lundi, 5-8 = mardi, ... 16-20 = vendredi
     UE ue;
     Prof prof;
-    Jour jour;
 }S_cours;
 
 struct s_prof{
     int id;
-    Formation formation;    // tableau de formation ou une seule formation ?
-    Cours* cours;
-    UE ue;                  // tableau d'UE ou une seule UE ?
+    string nom;
+    Cours[20] cours;
 }S_prof;
 
 struct s_Formation{
     int id;
+    string nom;
     UE* ue;
-    Prof* prof;
-    Cours* cours;
 }S_Formation;
 
 struct s_UE{
     int id;
-    Prof* prof;
-    Cours* cours;
-    Formation formation;
+    string nom;
+    Cours[20] cours;
 }S_UE;
 
 
