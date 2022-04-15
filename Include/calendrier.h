@@ -10,6 +10,10 @@ typedef struct s_prof* Prof;
 typedef struct s_Formation* Formation;
 typedef struct s_UE* UE;
 
+EDT initialiserEDT();
+Semaine initialiseSemaine();
+Jour initialiseJour();
+
 void ajouteCours();
 void ajouteProf();
 void ajouteFormation();

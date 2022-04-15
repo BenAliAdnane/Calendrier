@@ -2,9 +2,7 @@
 #include <stdio.h>
 #include "../Include/calendrier.h"
 
-struct s_edt* Edt;
-struct s_jour* Jour;
-struct s_semaine* Semaine;
+
 
 void ajouteCours();
 void ajouteProf();
