@@ -14,7 +14,7 @@ struct s_cours{
 struct s_prof{
     int id;
     Formation formation;    // tableau de formation ou une seule formation ?
-    Cours cours;            // tableau de cours ou un seul cours ?
+    Cours* cours;
     UE ue;                  // tableau d'UE ou une seule UE ?
 }S_prof;
 
@@ -27,7 +27,7 @@ struct s_Formation{
 
 struct s_UE{
     int id;
-    Prof prof;          // tableau de prof ou un seul prof ?
+    Prof* prof;
     Cours* cours;
     Formation formation;
 }S_UE;
