@@ -98,11 +98,11 @@ Formation InitialiseFormation(){
 }
 
 
-void SetId(Formation formation, int id){
+void SetIdFormation(Formation formation, int id){
     formation->id = id;
 }
 
-void SetNom(Formation formation, char* nom){
+void SetNomFormation(Formation formation, char* nom){
     formation->nom = nom;
 }
 
@@ -112,7 +112,7 @@ bool CoursLibreFormation(Formation formation, int horaire){
 }
 
 
-void AddCours(Formation formation, Cours cours){
+void AddCoursFormation(Formation formation, Cours cours){
     if (CoursLibreFormation(formation, cours->horaire)){
         formation->cours[cours->horaire - 1] = cours;
     }
@@ -121,7 +121,7 @@ void AddCours(Formation formation, Cours cours){
     }
 }
 
-void supprCours(Formation formation, Cours cours){
+void SupprCoursFormation(Formation formation, Cours cours){
     if (!CoursLibreFormation(formation, cours->horaire)){
         formation->cours[cours->horaire - 1] = InitialiseCours();
     }
@@ -130,7 +130,7 @@ void supprCours(Formation formation, Cours cours){
     } 
 }
 
-void AddUE(Formation formation, UE ue){
+void AddUEFormation(Formation formation, UE ue){
     // on vérifie l'absence de l'UE
     ListeUE UETemp;
     bool present = false;
@@ -150,7 +150,7 @@ void AddUE(Formation formation, UE ue){
     }
 }
 
-void SupprUE(Formation formation, UE ue){
+void SupprUEFormation(Formation formation, UE ue){
     // on vérifie la présence de l'UE
     ListeUE UETemp;
     bool present = false;
