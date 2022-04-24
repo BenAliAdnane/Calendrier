@@ -35,13 +35,13 @@ Cours InitialiseCours(){
 
 }
 
-void SetProf(Cours cours, Prof prof){
+void SetProfCours(Cours cours, Prof prof){
     cours->prof=prof;
 }
-void setSalle(Cours cours, Salle salle){
+void setSalleCours(Cours cours, Salle salle){
     cours->salle=salle;
 }
-void setUE(Cours cours, UE ue){
+void setUECours(Cours cours, UE ue){
     cours->ue=ue;
 }
 
@@ -64,7 +64,7 @@ void SetIdProf(int id, Prof prof){
 void SetNomProf(char* nom, Prof prof){
     prof->nom=nom;
 }
-bool CoursLibre(int horaire, Prof prof){
+bool CoursLibreProf(int horaire, Prof prof){
     return (prof->cours[horaire-1]==InitialiseCours());
 }
 void SupprCoursProf(Prof prof, Cours coursAEnlever){
