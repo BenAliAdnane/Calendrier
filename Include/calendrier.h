@@ -1,25 +1,35 @@
+
+
 #ifndef __CALENDRIER_H__
 #define __CALENDRIER_H__
 
-typedef struct s_cours* Cours;
+#include <stdbool.h>     
+
+typedef struct s_cours* Cours;      
 typedef struct s_prof* Prof;
 typedef struct s_Formation* Formation;
 typedef struct s_UE* UE;
 typedef struct s_Salle* Salle;
 
-EDT initialiserEDT();
-Semaine initialiseSemaine();
-Jour initialiseJour();
+//structure fini
 
-void ajouteCours();
-void ajouteProf();
-void ajouteFormation();
-void ajouteUE();
+//COURS
+Cours InitialiseCours();
+void SetProf(Prof prof);
+void SetSalle(Salle salle);
+void SetUE(UE ue);
 
-void supprimerCours();
-void supprimerProf();
-void supprimerFormation();
-void supprimerUE();
+//PROF
+Prof InitialiseProf();
+void SetId(int id, Prof prof);
+void SetNom(char* nom, Prof prof);
+void AddCours(Cours cours, Prof prof);
+bool CoursLibre(int horaire);
 
+//UE
+UE InitialiseUE();
+void SetId(int id, UE ue);
+void SetNom(char* nom, UE ue);
+void AddCours(Cours cours, UE ue);
 
 #endif
