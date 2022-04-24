@@ -79,7 +79,7 @@ void AddCoursProf(Cours coursAMettre, Prof prof){
 
 //AddCours + CoursLibre
 
-Prof InitialiseUE(){
+Prof InitialiseProf(){
     Prof newUE=(Prof)malloc(sizeof(struct s_UE));
     newUE->id=NULL;
     newUE->nom=NULL;

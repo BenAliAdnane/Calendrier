@@ -146,7 +146,7 @@ void AddUEFormation(Formation formation, UE ue){
     }
     else{;
         UETemp->suivant = (ListeUE)malloc(sizeof(S_ListeUE));
-        UETemp->suivant->UE = ue;
+        UETemp->suivant->ue = ue;
     }
 }
 
@@ -156,7 +156,7 @@ void SupprUEFormation(Formation formation, UE ue){
     bool present = false;
     UETemp = formation->ListeUE;
 
-    if (formation->ListeUE->UE->id == ue-> id)
+    if (formation->ListeUE->ue->id == ue-> id)
         formation->ListeUE = formation->ListeUE->suivant;
 
     while (UETemp->suivant->suivant != NULL && !present){   // on s'arrete à l'avant dernier
@@ -169,7 +169,7 @@ void SupprUEFormation(Formation formation, UE ue){
     if(present){
         UETemp->suivant = UETemp->suivant->suivant;
     }
-    else if (UETemp->suivant->UE->id = ue->id){             //si l'ue est la derniere dans la liste
+    else if (UETemp->suivant->ue->id = ue->id){             //si l'ue est la derniere dans la liste
         UETemp->suivant = NULL;
     }
 }

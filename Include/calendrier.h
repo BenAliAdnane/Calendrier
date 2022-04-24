@@ -24,7 +24,7 @@ Prof InitialiseProf();
 void SetIdPRof(int id, Prof prof);
 void SetNomProf(char* nom, Prof prof);
 void AddCoursProf(Cours cours, Prof prof);
-bool CoursLibreProf(int horaire);
+bool CoursLibreProf(int horaire, Prof prof);
 
 //UE
 UE InitialiseUE();
