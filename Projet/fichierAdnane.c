@@ -22,11 +22,13 @@ struct s_UE{
     Cours* cours;
 }S_UE;
 
+
+
 Cours InitialiseCours(){
 
     Cours newCours= (Cours)malloc(sizeof(struct s_cours));
 
-    newCours->horaire=NULL;
+    newCours->horaire=0;
     newCours->ue=InitialiseUE();
     newCours->prof=InitialiseProf();
     newCours->salle=InitialiseSalle();
@@ -51,7 +53,7 @@ Prof InitialiseProf(){
 
     Prof newProf=(Prof)malloc(sizeof(struct s_prof));
 
-    newProf->id=NULL;
+    newProf->id=0;
     newProf->nom=NULL;
     for(int i=0; i<20; i++){
         newProf->cours[i]=InitialiseCours();
@@ -68,7 +70,7 @@ bool CoursLibreProf(int horaire, Prof prof){
     return (prof->cours[horaire-1]==InitialiseCours());
 }
 void SupprCoursProf(Prof prof, Cours coursAEnlever){
-    prof->cours[coursAEnlever->horaire -1]=InitialiseCours;
+    prof->cours[coursAEnlever->horaire -1]=InitialiseCours();
 }
 
 void AddCoursProf(Cours coursAMettre, Prof prof){
@@ -79,9 +81,9 @@ void AddCoursProf(Cours coursAMettre, Prof prof){
 
 //AddCours + CoursLibre
 
-Prof InitialiseProf(){
-    Prof newUE=(Prof)malloc(sizeof(struct s_UE));
-    newUE->id=NULL;
+UE InitialiseUE(){
+    UE newUE=(UE)malloc(sizeof(struct s_UE));
+    newUE->id=0;
     newUE->nom=NULL;
     for(int i=0; i<20; i++){
         newUE->cours[i]=InitialiseCours();
@@ -109,5 +111,5 @@ void AddCoursUE(Cours coursAMettre, UE ue){
     }
 }
 void SupprCoursUE(UE ue, Cours coursAEnlever){
-        ue->cours[coursAEnlever->horaire -1]=InitialiseCours;
+        ue->cours[coursAEnlever->horaire -1]=InitialiseCours();
 }
