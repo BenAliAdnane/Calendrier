@@ -1,4 +1,3 @@
-
 #ifndef __CALENDRIER_H__
 #define __CALENDRIER_H__
 
@@ -15,38 +14,23 @@ typedef struct s_ListeUE* ListeUE;
 
 //COURS
 Cours InitialiseCours();
-void SetProf(Prof prof);
-void SetSalleProf(Salle salle);
-void SetUEProf(UE ue);
+void SetProf(Cours cours, Prof prof);
+void SetSalle(Cours cours, Salle salle);
+void SetUE(Cours cours, UE ue);
 
 //PROF
 Prof InitialiseProf();
-void SetIdPRof(int id, Prof prof);
+void SetIdProf(int id, Prof prof);
 void SetNomProf(char* nom, Prof prof);
 void AddCoursProf(Cours cours, Prof prof);
-bool CoursLibreProf(int horaire, Prof prof);
+bool CoursLibre(int horaire, Prof prof);
+void SupprCoursProf(Prof prof, Cours cours);
 
 //UE
 UE InitialiseUE();
 void SetIdUE(int id, UE ue);
 void SetNomUE(char* nom, UE ue);
 void AddCoursUE(Cours cours, UE ue);
-
-//SALLE
-Salle InitialiseSalle();
-void SetNomSalle(Salle salle, int nom);
-void AddCoursSalle(Salle salle, Cours cours);
-void SupprCoursSalle(Salle salle, Cours cours);
-bool CoursLibreSalle(Salle salle, int horaire);
-
-//FORMATION
-Formation InitialiseFormation();
-void SetId(Formation formation, int id);
-void SetNom(Formation formation, char* nom);
-void AddUE(Formation formation, UE ue);
-void SupprUE(Formation formation, UE ue);
-void AddCours(Formation formation, Cours cours);
-void SupprCours(Formation formation, Cours cours);
-bool CoursLibre(Formation formation, int horaire);
+void SupprCoursUE(UE ue, Cours cours);
 
 #endif
