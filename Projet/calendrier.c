@@ -59,7 +59,7 @@ void SetNomSalle(Salle salle, int nom){
 }
 
 bool CoursLibreSalle(Salle salle, int horaire){
-    return (salle->cours[horaire -1] == InitialiseCours());
+    return (salle->cours[horaire -1]->horaire == 0);
 }
 
 void AddCoursSalle(Salle salle, Cours cours){
@@ -218,7 +218,7 @@ void SetNomProf(char* nom, Prof prof){
     prof->nom=nom;
 }
 bool CoursLibreProf(int horaire, Prof prof){
-    return (prof->cours[horaire-1]==InitialiseCours());
+    return (prof->cours[horaire-1]->horaire==0);
 }
 void SupprCoursProf(Prof prof, Cours coursAEnlever){
     prof->cours[coursAEnlever->horaire -1]=InitialiseCours();
@@ -252,7 +252,7 @@ void SetNomUE(char* nom, UE ue){
 
 void AddCoursUE(Cours coursAMettre, UE ue){
     int a=0;
-    for(int i=0; ue->cours[i]!=InitialiseCours();i++){
+    for(int i=0; ue->cours[i]->horaire!=0;i++){
         a++;
     }
     if(a<20){
