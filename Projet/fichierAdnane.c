@@ -149,7 +149,7 @@ void SupprCoursUE(UE ue, Cours coursAEnlever){
 
 ListeSalle InitialisationListeSalle(){
     ListeSalle newListeSalle = (ListeSalle)malloc(sizeof(struct s_ListeSalle));
-    newListeSalle->salle=NULL;
+    newListeSalle->salle=InitialiseSalle;
     newListeSalle->suivant=NULL;
 
     return newListeSalle;
@@ -158,7 +158,7 @@ ListeSalle InitialisationListeSalle(){
 
 ListeFormation InitialisationListeFormation(){
     ListeFormation newListeFormation = (ListeSalle)malloc(sizeof(struct s_ListeFormation));
-    newListeFormation->formation=NULL;
+    newListeFormation->formation=InitialiseFormation();
     newListeFormation->suivant=NULL;
 
     return newListeFormation;
@@ -167,7 +167,7 @@ ListeFormation InitialisationListeFormation(){
 
 ListeProf InitialisationListeProf(){
     ListeProf newListeProf = (ListeProf)malloc(sizeof(struct s_ListeProf));
-    newListeProf->prof=NULL;
+    newListeProf->prof=InitialiseProf;
     newListeProf->suivant=NULL;
 
     return newListeProf;
