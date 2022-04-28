@@ -33,4 +33,8 @@ void SetNomUE(char* nom, UE ue);
 void AddCoursUE(Cours cours, UE ue);
 void SupprCoursUE(UE ue, Cours cours);
 
+//Salle
+
+Salle InitialiseSalle();
+
 #endif
