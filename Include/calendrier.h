@@ -14,16 +14,16 @@ typedef struct s_ListeUE* ListeUE;
 
 //COURS
 Cours InitialiseCours();
-void SetProf(Cours cours, Prof prof);
-void SetSalle(Cours cours, Salle salle);
-void SetUE(Cours cours, UE ue);
+void SetProfCours(Cours cours, Prof prof);
+void setSalleCours(Cours cours, Salle salle);
+void setUECours(Cours cours, UE ue);
 
 //PROF
 Prof InitialiseProf();
 void SetIdProf(int id, Prof prof);
 void SetNomProf(char* nom, Prof prof);
 void AddCoursProf(Cours cours, Prof prof);
-bool CoursLibre(int horaire, Prof prof);
+bool CoursLibreProf(int horaire, Prof prof);
 void SupprCoursProf(Prof prof, Cours cours);
 
 //UE
@@ -36,5 +36,28 @@ void SupprCoursUE(UE ue, Cours cours);
 //Salle
 
 Salle InitialiseSalle();
+void SetNomSalle(Salle salle, int nom);
+bool CoursLibreSalle(Salle salle, int horaire);
+void AddCoursSalle(Salle salle, Cours cours);
+void SupprCoursSalle(Salle salle, Cours cours);
+
+Formation InitialiseFormation();
+void SetIdFormation(Formation formation, int id);
+void SetNomFormation(Formation formation, char* nom);
+bool CoursLibreFormation(Formation formation, int horaire);
+void AddCoursFormation(Formation formation, Cours cours);
+void SupprCoursFormation(Formation formation, Cours cours);
+void AddUEFormation(Formation formation, UE ue);
+void SupprUEFormation(Formation formation, UE ue);
+
+//Liste chainée
+
+
+
+
+
+
+
+
 
 #endif
