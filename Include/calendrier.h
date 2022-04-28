@@ -61,7 +61,14 @@ ListeFormation InitialisationListeFormation();
 ListeProf InitialisationListeProf();
 
 
-
+void addSalle(ListeSalle Listesalle, Salle salle);
+void supprSalle(ListeSalle Listesalle, Salle salle);
+void addFormation(ListeFormation Listeformation, Formation formation);
+void supprFormation(ListeFormation Listeformation, Formation formation);
+void addProf(ListeProf Listeprof, Prof prof);
+void supprProf(ListeProf Listeprof, Prof prof);
+void addUE(ListeUE ListeUe, UE ue);
+void supprUE(ListeUE ListeUe, UE ue);
 
 
 
