@@ -16,12 +16,41 @@ struct s_prof{
     Cours* cours;
 }S_prof;
 
+struct s_Formation{
+    int id;
+    char* nom;
+    ListeUE ListeUE;
+    Cours* cours;
+}S_Formation;
+
 struct s_UE{
     int id;
     char* nom;
     Cours* cours;
 }S_UE;
 
+struct s_Salle{
+    int nom;
+    Cours* cours;
+}S_Salle;
+
+struct s_ListeUE{
+    UE ue;
+    ListeUE suivant;
+}S_ListeUE;
+
+struct s_ListeSalle{
+    Salle salle;
+    ListeSalle suivant;
+};
+struct s_ListeFormation{
+    Formation formation;
+    ListeFormation suivant;
+};
+struct s_ListeProf{
+    Prof prof;
+    ListeProf suivant;
+};
 
 
 Cours InitialiseCours(){
@@ -113,3 +142,36 @@ void AddCoursUE(Cours coursAMettre, UE ue){
 void SupprCoursUE(UE ue, Cours coursAEnlever){
         ue->cours[coursAEnlever->horaire -1]=InitialiseCours();
 }
+
+
+
+//Initialisation des Liste chaine
+
+ListeSalle InitialisationListeSalle(){
+    ListeSalle newListeSalle = (ListeSalle)malloc(sizeof(struct s_ListeSalle));
+    newListeSalle->salle=NULL;
+    newListeSalle->suivant=NULL;
+
+    return newListeSalle;
+
+}
+
+ListeFormation InitialisationListeFormation(){
+    ListeFormation newListeFormation = (ListeSalle)malloc(sizeof(struct s_ListeFormation));
+    newListeFormation->formation=NULL;
+    newListeFormation->suivant=NULL;
+
+    return newListeFormation;
+
+}
+
+ListeProf InitialisationListeProf(){
+    ListeProf newListeProf = (ListeProf)malloc(sizeof(struct s_ListeProf));
+    newListeProf->prof=NULL;
+    newListeProf->suivant=NULL;
+
+    return newListeProf;
+
+}
+
+

@@ -52,8 +52,13 @@ void SupprUEFormation(Formation formation, UE ue);
 
 //Liste chainée
 
+typedef struct s_ListeSalle* ListeSalle;
+typedef struct s_ListeFormation* ListeFormation;
+typedef struct s_ListeProf* ListeProf;
 
-
+ListeSalle InitialisationListeSalle();
+ListeFormation InitialisationListeFormation();
+ListeProf InitialisationListeProf();
 
 
 
