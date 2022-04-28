@@ -33,4 +33,21 @@ void SetNomUE(char* nom, UE ue);
 void AddCoursUE(Cours cours, UE ue);
 void SupprCoursUE(UE ue, Cours cours);
 
+//SALLES
+Salle InitialiseSalle();
+void SetNomSalle(Salle salle, int nom);
+bool CoursLibreSalle(Salle salle, int horaire);
+void AddCoursSalle(Salle salle, Cours cours);
+void SupprCoursSalle(Salle salle, Cours cours);
+
+//FORMATIONS
+Formation InitialiseFormation();
+void SetIdFormation(Formation formation, int id);
+void SetNomFormation(Formation formation, char* nom);
+bool CoursLibreFormation(Formation formation, int horaire);
+void AddCoursFormation(Formation formation, Cours cours);
+void SupprCoursFormation(Formation formation, Cours cours);
+void AddUEFormation(Formation formation, UE ue);
+void SupprUEFormation(Formation formation, UE ue);
+
 #endif
