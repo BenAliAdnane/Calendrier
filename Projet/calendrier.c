@@ -453,7 +453,7 @@ void addProf(ListeProf Listeprof, Prof prof){
             ListeTemp->suivant->prof = prof;
         }
         else{
-            printf("La prof %s existe deja\n", prof->nom);
+            printf("Le prof %s existe deja\n", prof->nom);
         }
 
     }
@@ -464,14 +464,14 @@ void supprProf(ListeProf Listeprof, Prof prof){
 
     // si la liste est vide
     if (Listeprof->prof == NULL){
-        printf("Erreur : la prof %s nest pas presente dans la liste", prof->nom);
+        printf("Erreur : le prof %s nest pas presente dans la liste", prof->nom);
     }
     // si un seul prof dans la liste
     if (Listeprof->suivant = NULL){
         if (Listeprof->prof->nom == prof->nom)
             Listeprof = InitialisationListeProf();
         else
-            printf("Erreur : la prof %s nest pas presente dans la liste", prof->nom);
+            printf("Erreur : le prof %s nest pas presente dans la liste", prof->nom);
     }
     else{
 
@@ -485,7 +485,7 @@ void supprProf(ListeProf Listeprof, Prof prof){
         }
 
         if(!present)
-            printf("Erreur : la prof %s nest pas presente dans la liste", prof->nom);
+            printf("Erreur : le prof %s nest pas presente dans la liste", prof->nom);
         else
             ListeTemp->suivant = ListeTemp->suivant->suivant;
 
@@ -521,7 +521,7 @@ void addUE(ListeUE ListeUe, UE ue){
             ListeTemp->suivant->ue = ue;
         }
         else{
-            printf("La ue %s existe deja\n", ue->nom);
+            printf("L'ue %s existe deja\n", ue->nom);
         }
 
     }
@@ -532,14 +532,14 @@ void supprUE(ListeUE ListeUe, UE ue){
 
     // si la liste est vide
     if (ListeUe->ue == NULL){
-        printf("Erreur : la ue %s nest pas presente dans la liste", ue->nom);
+        printf("Erreur : l'ue %s nest pas presente dans la liste", ue->nom);
     }
     // si un seul ue dans la liste
     if (ListeUe->suivant = NULL){
         if (ListeUe->ue->nom == ue->nom)
             ListeUe = InitialisationListeUE();
         else
-            printf("Erreur : la ue %s nest pas presente dans la liste", ue->nom);
+            printf("Erreur : l'ue %s nest pas presente dans la liste", ue->nom);
     }
     else{
 
@@ -553,7 +553,7 @@ void supprUE(ListeUE ListeUe, UE ue){
         }
 
         if(!present)
-            printf("Erreur : la ue %s nest pas presente dans la liste", ue->nom);
+            printf("Erreur : l'ue %s nest pas presente dans la liste", ue->nom);
         else
             ListeTemp->suivant = ListeTemp->suivant->suivant;
 
