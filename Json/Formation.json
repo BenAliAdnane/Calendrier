@@ -1,25 +1,131 @@
 {
     "Formation1":{
-        "nom":"LicenceMath"
+        "nom":"LicenceMath",
+        "ListeUE":{
+            "UE1":{
+                "nom":"MathsGeneral"
+            },
+        
+            "UE2":{
+                "nom":"MAthsAppliqués"
+            },
+        
+            "UE3":{
+                "nom":"Proba"
+            },
+        
+            "UE4":{
+                "nom":"Optique"
+            },
+        
+            "UE5":{
+                "nom":"Mécanique"
+            },
+        
+            "UE6":{
+                "nom":"Informatique"
+            }
+        }
     },
 
     "Formation2":{
-        "nom":"LicencePhysique"
+        "nom":"LicencePhysique",
+        "ListeUE":{
+            "UE1":{
+                "nom":"Electro"
+            },
+        
+            "UE2":{
+                "nom":"Optique"
+            },
+        
+            "UE3":{
+                "nom":"MEca"
+            },
+        
+            "UE4":{
+                "nom":"MAthsGéneral"
+            },
+        
+            "UE5":{
+                "nom":"Mecatronique"
+            }
+        }
     },
 
     "Formation3":{
-        "nom":"Cupge"
+        "nom":"Cupge",
+        "ListeUE":{
+            "UE1":{
+                "nom":"Maths"
+            },
+        
+            "UE2":{
+                "nom":"Physique"
+            },
+        
+            "UE3":{
+                "nom":"M2canique"
+            },
+        
+            "UE4":{
+                "nom":"Informatique"
+            },
+        
+            "UE5":{
+                "nom":"Sport"
+            }
+        }
     },
 
     "Formation4":{
-        "nom":"BioChimie"
+        "nom":"BioChimie",
+        "ListeUE":{
+            "UE1":{
+                "nom":"Sport"
+            },
+        
+            "UE2":{
+                "nom":"Chimie"
+            },
+        
+            "UE3":{
+                "nom":"Biologie"
+            },
+        
+            "UE4":{
+                "nom":"électronique"
+            },
+        
+            "UE5":{
+                "nom":"SVT"
+            }
+        }
     },
 
-    "Formation5":{
-        "nom":"LicenceMécanique"
-    },
 
     "Formation6":{
-        "nom":"LicenceInformatique"
+        "nom":"LicenceInformatique",
+        "ListeUE":{
+            "UE1":{
+                "nom":"IA"
+            },
+        
+            "UE2":{
+                "nom":"Réseau"
+            },
+        
+            "UE3":{
+                "nom":"Telecommunication"
+            },
+        
+            "UE4":{
+                "nom":"Système Embarqué"
+            },
+        
+            "UE5":{
+                "nom":"Graphe"
+            }
+        }
     }
 }
