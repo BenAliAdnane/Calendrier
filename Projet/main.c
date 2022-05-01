@@ -52,7 +52,7 @@ void menuAdmin(ListeFormation formations, ListeProf profs, ListeSalle salles){
 
 
 
-void MainMenu(ListeFormation formations, ListeProf profs, ListeSalle salles, BYTE[] hash){
+void MainMenu(ListeFormation formations, ListeProf profs, ListeSalle salles, BYTE* hash){
     int r;
     printf("\nChoisissez le menus :\n\n\t1 - admin\n\t2 - clients\n\t0 - quitter\n");
     scanf("%d",&r);
