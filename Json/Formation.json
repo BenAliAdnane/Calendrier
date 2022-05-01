@@ -1,131 +1,59 @@
 {
     "Formation1":{
         "nom":"LicenceMath",
-        "ListeUE":{
-            "UE1":{
-                "nom":"MathsGeneral"
-            },
-        
-            "UE2":{
-                "nom":"MAthsAppliqués"
-            },
-        
-            "UE3":{
-                "nom":"Proba"
-            },
-        
-            "UE4":{
-                "nom":"Optique"
-            },
-        
-            "UE5":{
-                "nom":"Mécanique"
-            },
-        
-            "UE6":{
-                "nom":"Informatique"
-            }
-        }
+        "ListeUE":[
+            "MathsGeneral",
+            "MAthsAppliqués",
+            "Proba",
+            "Optique",
+            "Mécanique",
+            "Informatique"
+        ]
     },
 
     "Formation2":{
         "nom":"LicencePhysique",
-        "ListeUE":{
-            "UE1":{
-                "nom":"Electro"
-            },
-        
-            "UE2":{
-                "nom":"Optique"
-            },
-        
-            "UE3":{
-                "nom":"MEca"
-            },
-        
-            "UE4":{
-                "nom":"MAthsGéneral"
-            },
-        
-            "UE5":{
-                "nom":"Mecatronique"
-            }
-        }
+        "ListeUE":[
+            "Electro",
+            "Optique",
+            "MEca",
+            "MAthsGéneral",
+            "Mecatronique"
+        ]
     },
 
     "Formation3":{
         "nom":"Cupge",
-        "ListeUE":{
-            "UE1":{
-                "nom":"Maths"
-            },
-        
-            "UE2":{
-                "nom":"Physique"
-            },
-        
-            "UE3":{
-                "nom":"M2canique"
-            },
-        
-            "UE4":{
-                "nom":"Informatique"
-            },
-        
-            "UE5":{
-                "nom":"Sport"
-            }
-        }
+        "ListeUE":[
+            "Maths",
+            "Physique",
+            "M2canique",
+            "Informatique",
+            "Sport" 
+        ]
     },
 
     "Formation4":{
         "nom":"BioChimie",
-        "ListeUE":{
-            "UE1":{
-                "nom":"Sport"
-            },
+        "ListeUE":[
+            "Sport",
+            "Chimie",
+            "Biologie",
+            "électronique",
+            "SVT"
+        ]
         
-            "UE2":{
-                "nom":"Chimie"
-            },
-        
-            "UE3":{
-                "nom":"Biologie"
-            },
-        
-            "UE4":{
-                "nom":"électronique"
-            },
-        
-            "UE5":{
-                "nom":"SVT"
-            }
-        }
     },
 
 
     "Formation6":{
         "nom":"LicenceInformatique",
-        "ListeUE":{
-            "UE1":{
-                "nom":"IA"
-            },
-        
-            "UE2":{
-                "nom":"Réseau"
-            },
-        
-            "UE3":{
-                "nom":"Telecommunication"
-            },
-        
-            "UE4":{
-                "nom":"Système Embarqué"
-            },
-        
-            "UE5":{
-                "nom":"Graphe"
-            }
-        }
+        "ListeUE":[
+            "IA",
+            "Réseau",
+            "Telecommunication",
+            "Système Embarqué",
+            "Graphe"
+        ] 
     }
 }
