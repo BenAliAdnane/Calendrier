@@ -2,6 +2,92 @@
 #include <stdio.h>
 #include "../Include/calendrier.h"
 #include <json-c/json.h>
+#include "../Include/sha1.h"
+#include "../Include/menus.h"
+
+
+void menuClients(ListeFormation formations, ListeProf profs, ListeSalle salles){
+    int r;
+    printf("\nChoisissez le menus :\n\n\t1 - afficher l'EDT d'une formation\n\t2 - afficher l'EDT d'une salle\n\t3 - afficher l'EDT d'un prof\n\t0 - quitter\n");
+    scanf("%d",&r);
+    while(r!=0){
+        if(r==1){
+            menuEDTFormations(formations);
+        }
+        else if (r==2){
+            menuEDTSalles(salles);
+        }
+        else if(r==3){
+            menuEDTProfs(profs);
+        }
+        
+        printf("\nChoisissez le menus :\n\n\t1 - afficher l'EDT d'une formation\n\t2 - afficher l'EDT d'une salle\n\t3 - afficher l'EDT d'un prof\n\t0 - quitter\n");
+        scanf("%d",&r);
+    }
+}
+
+
+void menuAdmin(ListeFormation formations, ListeProf profs, ListeSalle salles){
+    int r;
+    printf("\nChoisissez le menus :\n\n\t1 - gestion prof\n\t2 - gestion salles\n\t3 - gestion formations\n\t4 - gestion EDT\n\t0 - quitter\n");
+    scanf("%d",&r);
+    while(r!=0){
+        if(r==1){
+            menuGestionProfs(formations, profs, salles);
+        }
+        else if (r==2){
+            menuGestionSalles(formations, profs, salles);
+        }
+        else if(r==3){
+            menuGestionFormations(formations, profs, salles);
+        }
+        else if(r==4){
+            menuGestionEDT(formations, profs, salles);
+        }
+        printf("\nChoisissez le menus :\n\n\t1 - gestion prof\n\t2 - gestion salles\n\t3 - gestion formations\n\t4 - gestion EDT\n\t0 - quitter\n");
+        scanf("%d",&r);
+    }
+
+}
+
+
+
+void MainMenu(ListeFormation formations, ListeProf profs, ListeSalle salles, BYTE[] hash){
+    int r;
+    printf("\nChoisissez le menus :\n\n\t1 - admin\n\t2 - clients\n\t0 - quitter\n");
+    scanf("%d",&r);
+    while(r!=0){
+        if (r==1){
+            char* mdp;
+            printf("mot de passe :\n");
+            scanf("%s", &mdp);
+            SHA1_CTX ctx;
+            BYTE buf[400];
+
+            sha1_init(&ctx);
+
+            sha1_update(&ctx, mdp, strlen(mdp));
+
+            sha1_final(&ctx, buf);
+
+            if(memcmp(hash, buf, SHA1_BLOCK_SIZE)){
+                menuAdmin(formations, profs, salles);
+            }
+            else{
+                printf("Mauvais mot de passe");
+            }
+        }
+        else if(r==2){
+
+            menuClients(formations, profs, salles);
+        }
+        printf("\nChoisissez le menus :\n\n\t1 - admin\n\t2 - clients\n\t0 - quitter\n");
+        scanf("%d",&r);
+    }
+}
+
+
+
 
 int main(){
 
@@ -44,54 +130,15 @@ int main(){
     
     
     
-
-
-
-    int motDePasse=5567;
-    int reponse;
-    printf("                Calendrier, Mot de Passe, JSon\n\nEntrez le mot de passe ==> ");
-    scanf("%d",&reponse);
-
-    if(reponse == motDePasse){
-        printf("\nMot de passe correct");
-        int accesListeSalle =1;
-        int accesListeProf =2;
-        int accesListeFormation =3;
-        printf("\nAcceder aux \n1 : Listes des Professeurs\n2 : Listes des Salles\n3 : Listes des Formations\nVotre reponse ==> ");
-        int rep;
-        scanf("%d",&rep);
-        
-        if(rep==1){
-            json_object_object_get_ex(parsed_json2,"nom", &nom);
-            json_object_object_get_ex(parsed_json2,"id", &id);
-
-            printf("Nom: %s\n", json_object_get_string(parsed_json2,nom));
-            printf("Id: %d\n", json_object_get_int(parsed_json2,id));
-        }
-        else if(rep==2){
-            json_object_object_get_ex(parsed_json3,"nom", &nom);
-
-            printf("Nom: %s\n", json_object_get_string(parsed_json3,nom));
-        }
-        else if(rep==3){
-            json_object_object_get_ex(parsed_json1,"nom", &nom);
-            json_object_object_get_ex(parsed_json1,"ListeUE", &ListeUE);
-
-            n_ListeUE = json_object_array_length(ListeUE);
-            printf("Trouver %lu UE\n", n_ListeUE);
-            for(i=0; i<n_ListeUE;i++){
-                UE = json_object_array_get_idx(ListeUE,i);
-
-                printf("\t\t%lu. %s\n", i+1, json_object_get_string(parsed_json1,UE));
-            }
-
-                    
-        }else{
-            printf("\nERREUR : mauvaise saisi");
-        }
-        printf("\n\nAu revoir");
-    }
-    else{
-        printf("\nERREUR: ACCES REFUSE");
-    }
+    FILE* fMdp;
+    char buffer4[1024];
+    struct JSON_Object *parsed_json4;
+    struct JSON_Object *mdp;
+    fMdp = fopen("mdp.json", "r");
+    fread(buffer4, 1024, 1, fMdp);
+    fclose(fMdp);
+    
+    MainMenu(buffer1, buffer2, buffer3, buffer4);
+    
+    return 0;
 }
