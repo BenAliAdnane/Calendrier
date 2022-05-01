@@ -71,5 +71,9 @@ void addUE(ListeUE ListeUe, UE ue);
 void supprUE(ListeUE ListeUe, UE ue);
 
 
+void nouveauProf(char* nom, int id, ListeProf Listeprof);
+void nouvelleSalle(int nom, ListeSalle Listesalle);
+void nouvelleFormation(char* nom, int id, ListeFormation Listeformation);
+void nouvelleUE(char* nom, int id, ListeUE ListeUe);
 
 #endif

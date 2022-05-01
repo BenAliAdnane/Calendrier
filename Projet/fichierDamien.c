@@ -337,20 +337,6 @@ void supprUE(ListeUE ListeUe, UE ue){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Fonctions pour les Salles
 
 Salle InitialiseSalle(){
@@ -483,4 +469,40 @@ void SupprUEFormation(Formation formation, UE ue){
     else if (UETemp->suivant->ue->id = ue->id){             //si l'ue est la derniere dans la liste
         UETemp->suivant = NULL;
     }
+}
+
+
+
+
+
+
+
+void nouveauProf(char* nom, int id, ListeProf Listeprof){
+    Prof p = InitialiseProf();
+    SetNomProf(nom, p);
+    SetIdProf(id, p);
+    addProf(Listeprof, p);
+}
+
+
+void nouvelleSalle(int nom, ListeSalle Listesalle){
+    Salle s = InitialiseSalle();
+    SetNomSalle(nom, s);
+    addSalle(Listesalle, s);
+}
+
+
+void nouvelleFormation(char* nom, int id, ListeFormation Listeformation){
+    Formation f = InitialiseFormation();
+    SetNomFormation(f, nom);
+    SetIdFormation(f, id);
+    addFormation(Listeformation, f);
+}
+
+
+void nouvelleUE(char* nom, int id, ListeUE ListeUe){
+    UE ue = InitialiseUE();
+    SetNomUE(nom, ue);
+    SetIdUE(id, ue);
+    addUE(ListeUe, ue);
 }

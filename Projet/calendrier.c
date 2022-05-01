@@ -40,6 +40,21 @@ struct s_ListeUE{
     ListeUE suivant;
 }S_ListeUE;
 
+struct s_ListeSalle{
+    Salle salle;
+    ListeSalle suivant;
+};
+struct s_ListeFormation{
+    Formation formation;
+    ListeFormation suivant;
+};
+struct s_ListeProf{
+    Prof prof;
+    ListeProf suivant;
+};
+
+
+
 //Salle
 
 Salle InitialiseSalle(){
@@ -175,6 +190,8 @@ void SupprUEFormation(Formation formation, UE ue){
 }
 
 
+// Fonctions pour les cours
+
 Cours InitialiseCours(){
 
     Cours newCours= (Cours)malloc(sizeof(struct s_cours));
@@ -198,7 +215,7 @@ void setUECours(Cours cours, UE ue){
     cours->ue=ue;
 }
 
-// all
+// Fonctions pour les profs
 
 Prof InitialiseProf(){
 
@@ -263,4 +280,316 @@ void AddCoursUE(Cours coursAMettre, UE ue){
 }
 void SupprCoursUE(UE ue, Cours coursAEnlever){
         ue->cours[coursAEnlever->horaire -1]=InitialiseCours();
+}
+
+
+
+
+
+
+
+// GESTION DES LISTES
+
+
+// Gestion de la liste des salles
+
+void addSalle(ListeSalle Listesalle, Salle salle){
+
+    //Si la liste est vide
+    if(Listesalle->salle = NULL){
+        Listesalle->salle = salle;
+        Listesalle->suivant = InitialisationListeSalle();
+    }
+    else{
+        ListeSalle ListeTemp = Listesalle;
+        bool present = false;
+        
+        while (!present && ListeTemp->suivant != NULL){
+            
+            if (ListeTemp->salle->nom == salle->nom){
+                present = true;
+            }
+            ListeTemp = ListeTemp->suivant;
+
+        }
+
+        if (!present){
+            ListeTemp->suivant = InitialisationListeSalle();
+            ListeTemp->suivant->salle = salle;
+        }
+        else{
+            printf("La salle %s existe deja\n", salle->nom);
+        }
+
+    }
+
+}
+
+void supprSalle(ListeSalle Listesalle, Salle salle){
+
+    // si la liste est vide
+    if (Listesalle->salle == NULL){
+        printf("Erreur : la salle %s nest pas presente dans la liste", salle->nom);
+    }
+    // si une seule salle dans la liste
+    if (Listesalle->suivant = NULL){
+        if (Listesalle->salle->nom == salle->nom)
+            Listesalle = InitialisationListeSalle();
+        else
+            printf("Erreur : la salle %s nest pas presente dans la liste", salle->nom);
+    }
+    else{
+
+        ListeSalle ListeTemp = Listesalle;
+        bool present = false;
+
+        while(!present && ListeTemp->suivant->suivant != NULL){
+            if (ListeTemp->suivant->salle->nom == salle->nom)
+                present = true;
+            ListeTemp = ListeTemp->suivant;
+        }
+
+        if(!present)
+            printf("Erreur : la salle %s nest pas presente dans la liste", salle->nom);
+        else
+            ListeTemp->suivant = ListeTemp->suivant->suivant;
+
+    }
+
+}
+
+
+// Gestion de la liste des formations
+
+void addFormation(ListeFormation Listeformation, Formation formation){
+
+    //Si la liste est vide
+    if(Listeformation->formation = NULL){
+        Listeformation->formation = formation;
+        Listeformation->suivant = InitialisationListeFormation();
+    }
+    else{
+        ListeFormation ListeTemp = Listeformation;
+        bool present = false;
+        
+        while (!present && ListeTemp->suivant != NULL){
+            
+            if (ListeTemp->formation->nom == formation->nom){
+                present = true;
+            }
+            ListeTemp = ListeTemp->suivant;
+
+        }
+
+        if (!present){
+            ListeTemp->suivant = InitialisationListeFormation();
+            ListeTemp->suivant->formation = formation;
+        }
+        else{
+            printf("La formation %s existe deja\n", formation->nom);
+        }
+
+    }
+
+}
+
+void supprFormation(ListeFormation Listeformation, Formation formation){
+
+    // si la liste est vide
+    if (Listeformation->formation == NULL){
+        printf("Erreur : la formation %s nest pas presente dans la liste", formation->nom);
+    }
+    // si un seul prof dans la liste
+    if (Listeformation->suivant = NULL){
+        if (Listeformation->formation->nom == formation->nom)
+            Listeformation = InitialisationListeFormation();
+        else
+            printf("Erreur : la formation %s nest pas presente dans la liste", formation->nom);
+    }
+    else{
+
+        ListeFormation ListeTemp = Listeformation;
+        bool present = false;
+
+        while(!present && ListeTemp->suivant->suivant != NULL){
+            if (ListeTemp->suivant->formation->nom == formation->nom)
+                present = true;
+            ListeTemp = ListeTemp->suivant;
+        }
+
+        if(!present)
+            printf("Erreur : la formation %s nest pas presente dans la liste", formation->nom);
+        else
+            ListeTemp->suivant = ListeTemp->suivant->suivant;
+
+    }
+
+}
+
+// Gestion de la liste des profs
+
+void addProf(ListeProf Listeprof, Prof prof){
+
+    //Si la liste est vide
+    if(Listeprof->prof = NULL){
+        Listeprof->prof = prof;
+        Listeprof->suivant = InitialisationListeProf();
+    }
+    else{
+        ListeProf ListeTemp = Listeprof;
+        bool present = false;
+        
+        while (!present && ListeTemp->suivant != NULL){
+            
+            if (ListeTemp->prof->nom == prof->nom){
+                present = true;
+            }
+            ListeTemp = ListeTemp->suivant;
+
+        }
+
+        if (!present){
+            ListeTemp->suivant = InitialisationListeProf();
+            ListeTemp->suivant->prof = prof;
+        }
+        else{
+            printf("La prof %s existe deja\n", prof->nom);
+        }
+
+    }
+
+}
+
+void supprProf(ListeProf Listeprof, Prof prof){
+
+    // si la liste est vide
+    if (Listeprof->prof == NULL){
+        printf("Erreur : la prof %s nest pas presente dans la liste", prof->nom);
+    }
+    // si un seul prof dans la liste
+    if (Listeprof->suivant = NULL){
+        if (Listeprof->prof->nom == prof->nom)
+            Listeprof = InitialisationListeProf();
+        else
+            printf("Erreur : la prof %s nest pas presente dans la liste", prof->nom);
+    }
+    else{
+
+        ListeProf ListeTemp = Listeprof;
+        bool present = false;
+
+        while(!present && ListeTemp->suivant->suivant != NULL){
+            if (ListeTemp->suivant->prof->nom == prof->nom)
+                present = true;
+            ListeTemp = ListeTemp->suivant;
+        }
+
+        if(!present)
+            printf("Erreur : la prof %s nest pas presente dans la liste", prof->nom);
+        else
+            ListeTemp->suivant = ListeTemp->suivant->suivant;
+
+    }
+
+}
+
+
+// Gestion de la liste des ues
+
+void addUE(ListeUE ListeUe, UE ue){
+
+    //Si la liste est vide
+    if(ListeUe->ue = NULL){
+        ListeUe->ue = ue;
+        ListeUe->suivant = InitialisationListeUE();
+    }
+    else{
+        ListeUE ListeTemp = ListeUe;
+        bool present = false;
+        
+        while (!present && ListeTemp->suivant != NULL){
+            
+            if (ListeTemp->ue->nom == ue->nom){
+                present = true;
+            }
+            ListeTemp = ListeTemp->suivant;
+
+        }
+
+        if (!present){
+            ListeTemp->suivant = InitialisationListeUE();
+            ListeTemp->suivant->ue = ue;
+        }
+        else{
+            printf("La ue %s existe deja\n", ue->nom);
+        }
+
+    }
+
+}
+
+void supprUE(ListeUE ListeUe, UE ue){
+
+    // si la liste est vide
+    if (ListeUe->ue == NULL){
+        printf("Erreur : la ue %s nest pas presente dans la liste", ue->nom);
+    }
+    // si un seul ue dans la liste
+    if (ListeUe->suivant = NULL){
+        if (ListeUe->ue->nom == ue->nom)
+            ListeUe = InitialisationListeUE();
+        else
+            printf("Erreur : la ue %s nest pas presente dans la liste", ue->nom);
+    }
+    else{
+
+        ListeUE ListeTemp = ListeUe;
+        bool present = false;
+
+        while(!present && ListeTemp->suivant->suivant != NULL){
+            if (ListeTemp->suivant->ue->nom == ue->nom)
+                present = true;
+            ListeTemp = ListeTemp->suivant;
+        }
+
+        if(!present)
+            printf("Erreur : la ue %s nest pas presente dans la liste", ue->nom);
+        else
+            ListeTemp->suivant = ListeTemp->suivant->suivant;
+
+    }
+
+}
+
+
+// CREATION DE NOUVEAUX PROF/UE/SALLE/FORMATIONS
+
+void nouveauProf(char* nom, int id, ListeProf Listeprof){
+    Prof p = InitialiseProf();
+    SetNomProf(nom, p);
+    SetIdProf(id, p);
+    addProf(Listeprof, p);
+}
+
+
+void nouvelleSalle(int nom, ListeSalle Listesalle){
+    Salle s = InitialiseSalle();
+    SetNomSalle(nom, s);
+    addSalle(Listesalle, s);
+}
+
+
+void nouvelleFormation(char* nom, int id, ListeFormation Listeformation){
+    Formation f = InitialiseFormation();
+    SetNomFormation(f, nom);
+    SetIdFormation(f, id);
+    addFormation(Listeformation, f);
+}
+
+
+void nouvelleUE(char* nom, int id, ListeUE ListeUe){
+    UE ue = InitialiseUE();
+    SetNomUE(nom, ue);
+    SetIdUE(id, ue);
+    addUE(ListeUe, ue);
 }
