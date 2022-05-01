@@ -1,0 +1,27 @@
+{
+    "UE1":{
+        "nom":"Math"
+    },
+
+    "UE2":{
+        "nom":"Physique"
+    },
+
+    "UE3":{
+        "nom":"Electromagnétisme"
+    },
+
+    "UE4":{
+        "nom":"Optique"
+    },
+
+    "UE5":{
+        "nom":"Mécanique"
+    },
+
+    "UE6":{
+        "nom":"Informatique"
+    }
+}
+
+

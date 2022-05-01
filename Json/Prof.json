@@ -1,0 +1,22 @@
+{
+    "Prof1":{
+        "id":1,
+        "nom":"Robert"
+    },
+    "Prof2":{
+        "id":2,
+        "nom":"Truillet"
+    },
+    "Prof3":{
+        "id":3,
+        "nom":"Petit"
+    },
+    "Prof4":{
+        "id":4,
+        "nom":"Bonneval"
+    },
+    "Prof5":{
+        "id":1,
+        "nom":"Marie"
+    }
+}

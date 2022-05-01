@@ -1,0 +1,25 @@
+{
+    "Formation1":{
+        "nom":"LicenceMath"
+    },
+
+    "Formation2":{
+        "nom":"LicencePhysique"
+    },
+
+    "Formation3":{
+        "nom":"Cupge"
+    },
+
+    "Formation4":{
+        "nom":"BioChimie"
+    },
+
+    "Formation5":{
+        "nom":"LicenceMécanique"
+    },
+
+    "Formation6":{
+        "nom":"LicenceInformatique"
+    }
+}
